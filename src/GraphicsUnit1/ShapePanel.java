@@ -13,11 +13,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Canvas;
+import static java.awt.Color.BLACK;
 import static java.awt.Color.BLUE;
 import static java.awt.Color.RED;
 import javax.swing.JPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static javafx.scene.paint.Color.GOLD;
 
 public class ShapePanel extends JPanel
 {
@@ -54,6 +56,9 @@ public class ShapePanel extends JPanel
                 Shape t2 = new Shape(300, 400, 200, 90, BLUE);
                 t2.draw(window);
 		//instantiate a Shape
+                
+                Shape t3 = new Shape(420, 420, 96, 40, BLACK);
+                t3.draw(window);
 		//tell your shape to draw
 	}
 }
