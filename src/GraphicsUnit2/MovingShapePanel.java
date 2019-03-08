@@ -52,7 +52,7 @@ public class MovingShapePanel extends JPanel implements Runnable
 		//this code handles the left and right walls
 		
 		
-		if(!(sh.getxPos()>=10 && sh.getxPos()<=730))
+		if(!(sh.getxPos()>=10 && sh.getxPos()<=660))
 		{
 			sh.setxSpeed(-sh.getxSpeed());
 		}
