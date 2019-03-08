@@ -13,6 +13,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Canvas;
+import static java.awt.Color.BLACK;
+import static java.awt.Color.BLUE;
+import static java.awt.Color.RED;
 import javax.swing.JPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,6 +28,7 @@ public class ShapePanel extends JPanel
 		setVisible(true);
 	}
 
+        @Override
 	public void update(Graphics window)
 	{
 		paint(window);
@@ -33,6 +37,7 @@ public class ShapePanel extends JPanel
 	/*
 	 *All of your test code should be placed in paint.
 	 */
+        @Override
 	public void paint(Graphics window)
 	{
 		window.setColor(Color.WHITE);
@@ -41,6 +46,17 @@ public class ShapePanel extends JPanel
 		window.drawRect(20,20,getWidth()-40,getHeight()-40);
 		window.setFont(new Font("TAHOMA",Font.BOLD,18));
 		window.drawString("CREATE YOUR OWN SHAPE!",40,40);
+                
+                Shape t1 = new Shape(200, 200, 100, 50, RED, 30, 10);
+                t1.draw(window);
+		//instantiate a Shape
+		//tell your shape to draw
+                Shape t2 = new Shape(300, 400, 200, 90, BLUE, 10, 10);
+                t2.draw(window);
+		//instantiate a Shape
+                
+                Shape t3 = new Shape(520, 520, 96, 40, BLACK, 1, 5);
+                t3.draw(window);
 
 
 		//make a Shape

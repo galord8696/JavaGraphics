@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Canvas;
+import static java.awt.Color.RED;
 import javax.swing.JPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,7 +28,7 @@ public class MovingShapePanel extends JPanel implements Runnable
 		setVisible(true);
 
 		//refer sh to a new Shape
-
+                sh = new Shape(200, 200, 100, 50, RED, 5, 10);
 
 		new Thread(this).start();
 	}
@@ -47,20 +48,24 @@ public class MovingShapePanel extends JPanel implements Runnable
 		window.drawString("CREATE YOUR OWN SHAPE!",40,40);
 
 		//tell sh to move and draw
-
+                sh.moveAndDraw(window);
 		//this code handles the left and right walls
-		/* uncomment once Shape is built
-		 *
-		if(!(sh.getX()>=10 && sh.getX()<=730))
+		
+		
+		if(!(sh.getxPos()>=10 && sh.getxPos()<=730))
 		{
-			sh.setXSpeed(-sh.getXSpeed());
+			sh.setxSpeed(-sh.getxSpeed());
 		}
-		*/
+		else if(!(sh.getyPos()>=70 && sh.getyPos()<=530))
+                {
+                    sh.setySpeed(-sh.getySpeed());
+                }
 
 		//add code to handle the top and bottom walls
 
 	}
 
+        @Override
    public void run()
    {
    	try
